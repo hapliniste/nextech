@@ -1,4 +1,4 @@
-//import { Html, Head, Main, NextScript } from 'next/document'
+import { Html, Head, Main, NextScript } from 'next/document'
 import Document, { DocumentContext } from 'next/document'
 import { ServerStyleSheet } from 'styled-components'
 
@@ -22,6 +22,21 @@ export default class MyDocument extends Document {
     } finally {
       sheet.seal()
     }
+  }
+
+  render() {
+    return (
+      <Html>
+        <Head>
+          <title>Nextech development</title>
+          <meta name="google-site-verification" content="t_tSSM8BhfbE7QXWTabn4bn9TqvSjYUEUPwvMOEJNMM" />
+        </Head>
+        <body>
+          <Main />
+          <NextScript />
+        </body>
+      </Html>
+    )
   }
 }
 
