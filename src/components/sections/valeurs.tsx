@@ -55,12 +55,12 @@ const cardContent: ICardProps[] = [
     },
 ];
 
-interface ValeursProps extends JSX.IntrinsicElements {
+interface ValeursProps {
     scrollerRef: React.RefObject<HTMLElement>;
 }
 
 //scrollerRef: React.Ref<HTMLDivElement>
-const Valeurs: React.FC<ValeursProps> = ({scrollerRef, ...props}) => {
+const Valeurs: React.FC<ValeursProps> = ({scrollerRef}) => {
     const carouselRef = useRef(null);
 
     useEffect(() => {
