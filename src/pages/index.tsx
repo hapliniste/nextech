@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import styled from "styled-components";
 import Head from "next/head";
 
@@ -28,13 +28,15 @@ const ScrollContainer = styled.div`
     -ms-overflow-style: none; /* Internet Explorer 10+ */
     ::-webkit-scrollbar {
         width: 0; /* Remove scrollbar space */
-        //background: transparent;  /* Optional: just make scrollbar invisible */
+        background: transparent;  /* Optional: just make scrollbar invisible */
     }
 `;
 
 export default function Home() {
+    const scrollContainerRef: React.Ref<HTMLDivElement> = useRef<HTMLDivElement>(null);
+
     return (
-        <ScrollContainer>
+        <ScrollContainer ref={scrollContainerRef}>
             {/*Hero section*/}
             <ScrollSection>
                 <Hero />
@@ -43,7 +45,7 @@ export default function Home() {
 
             {/*Nos valeurs*/}
             <ScrollSection>
-                <Valeurs />
+                <Valeurs scrollerRef={scrollContainerRef}/>
             </ScrollSection>
             {/*Prix*/}
             <ScrollSection>

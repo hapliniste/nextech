@@ -4,8 +4,8 @@ import styled from "styled-components";
 
 const ScrollWrapper = styled.div`
     background: none;
-    height: 80%;
-    width: 80%;
+    height: 100%;
+    width: 100%;
     margin: auto;
     //padding-left: 10em;
     //padding-right: 10em;

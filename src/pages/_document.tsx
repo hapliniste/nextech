@@ -28,7 +28,6 @@ export default class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          <title>Nextech development</title>
           <meta name="google-site-verification" content="t_tSSM8BhfbE7QXWTabn4bn9TqvSjYUEUPwvMOEJNMM" />
         </Head>
         <body>
@@ -39,15 +38,3 @@ export default class MyDocument extends Document {
     )
   }
 }
-
-/*export default function Document() {
-  return (
-    <Html lang="en">
-      <Head />
-      <body>
-        <Main />
-        <NextScript />
-      </body>
-    </Html>
-  )
-}*/

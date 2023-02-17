@@ -12,7 +12,14 @@ const Section = styled.div`
     background: ${(props) => props.theme.backgroundColor};
     height: 100%;
     display: flex;
+    flex-direction: column;
+    justify-content: space-around;
     align-content: center;
+`;
+
+const MainContent = styled.div`
+    display: flex;
+    align-items: center;
 `;
 
 const cardContent: ICardProps[] = [
@@ -48,23 +55,30 @@ const cardContent: ICardProps[] = [
     },
 ];
 
-const Valeurs: React.FC = () => {
+interface ValeursProps extends JSX.IntrinsicElements {
+    scrollerRef: React.RefObject<HTMLElement>;
+}
+
+//scrollerRef: React.Ref<HTMLDivElement>
+const Valeurs: React.FC<ValeursProps> = ({scrollerRef, ...props}) => {
     const carouselRef = useRef(null);
 
     useEffect(() => {
         const el = carouselRef.current;
-        /*gsap.fromTo(
+        gsap.fromTo(
             el,
             { opacity: 0 },
             { 
                 opacity: 1, 
                 duration: 5, 
                 scrollTrigger: { 
+                    scroller: scrollerRef.current,
                     trigger: el,
-                    start: "top center"
+                    start: "top center",
+                    markers: true
                 }
             }
-        );*/
+        );
     }, []);
 
     return (
